@@ -8,6 +8,7 @@ connection = sqlite3.connect('bank.db')
 cursor = connection.cursor()
 
 # Create table if it doesn't exist
+# You can remove the DROP TABLE command if you want to work on the same table again and again
 cursor.execute("DROP TABLE IF EXISTS accounts")
 cursor.execute("DROP TABLE IF EXISTS transactions")
 cursor.execute("CREATE TABLE IF NOT EXISTS accounts(account_number INTEGER PRIMARY KEY,customer_name TEXT NOT NULL,balance REAL NOT NULL,password TEXT NOT NULL)")
